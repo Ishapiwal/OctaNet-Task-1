@@ -1,0 +1,143 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #main {
+        height: 100%;
+        width: 100%;
+        background-color: deeppink;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #part1, #part3 {
+        height: 100%;
+        width: 15%;
+    }
+
+    #part2 {
+        height: 100%;
+        width: 67%;
+        background-color: hotpink;
+        background-image: url(https://www.hindustantimes.com/ht-img/img/2023/07/31/900x1600/kiara_advani_barbie_core_fashion_1690773741684_1690773759193.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        animation: background-move 20s ease-in-out infinite alternate;
+    }
+
+    #overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 20, 147, 0.5);
+        position: absolute;
+        animation: fade-in 3s ease-in-out forwards;
+    }
+
+    #text-div {
+        position: absolute;
+        left: 8%;
+        top: 40%;
+        transform: translate(0, -50%);
+        background-color: rgba(255, 182, 193, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        animation: fade-in 2s ease-in-out forwards;
+    }
+
+    #text-div h1 {
+        font-size: 100px;
+        font-weight: 800;
+        line-height: 95px;
+        letter-spacing: 6px;
+        color: black;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slide-in 1s ease-out forwards;
+        animation-delay: calc(0.3s * var(--i));
+    }
+
+    .animate-text {
+        --i: 1;
+        animation-delay: calc(0.3s * var(--i));
+    }
+
+    #small-text-div {
+        position: absolute;
+        right: 5%;
+        top: 72%;
+        max-width: 300px;
+        animation: fade-in 3s ease-in-out forwards;
+    }
+
+    #small-text-div h1, #small-text-div h2, #small-text-div h3 {
+        color: white;
+        opacity: 0;
+        animation: fade-in 3s ease-in-out forwards;
+        animation-delay: 3s;
+    }
+
+    #vertical-text {
+        position: absolute;
+        right: 5%;
+        top: 10%;
+        transform-origin: bottom right;
+        animation: fade-in 3s ease-in-out forwards;
+    }
+
+    #vertical-text h1 {
+        font-size: 80px;
+        letter-spacing: 10px;
+        transform: rotate(90deg);
+        font-weight: 900;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+        color: transparent;
+        animation: text-glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes slide-in {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes text-glow {
+        from {
+            text-shadow: 0 0 10px deeppink, 0 0 20px deeppink, 0 0 30px deeppink;
+        }
+        to {
+            text-shadow: 0 0 20px hotpink, 0 0 30px hotpink, 0 0 40px hotpink;
+        }
+    }
+
+    @keyframes background-move {
+        from {
+            background-position: center;
+        }
+        to {
+            background-position: top;
+        }
+    }
